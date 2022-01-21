@@ -10,7 +10,7 @@ export default class PingCommand extends Command implements CommandInterface {
             name: "ping",
             help: "get bot ping",
             usage: "ping",
-            type: CommandType.MISC
+            type: CommandType.Misc
         })
     }
 
