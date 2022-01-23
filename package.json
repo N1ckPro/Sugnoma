@@ -6,8 +6,9 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint src",
-    "start": "ts-node ./src/index.ts -start",
-    "test": "npm run lint"
+    "start": "ts-node ./src/index.ts",
+    "test": "npm run lint",
+    "workflow": "ts-node ./src/index.ts -workflow"
   },
   "author": "N1ckPro",
   "contributors": [

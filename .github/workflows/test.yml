@@ -21,4 +21,4 @@ jobs:
         run: npm run lint
 
       - name: Run TypeScript Compiler
-        run: npm run build
+        run: npm run workflow

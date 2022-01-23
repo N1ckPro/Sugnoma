@@ -21,7 +21,7 @@ export class Bot extends Client<true> {
             this.commands.set(command.name, command);
         }
 
-        const { token } = process.argv.includes('-start') ? await import('../config.json') : await import('../config.example.json');
+        const { token } = process.argv.includes('-workflow') ? await import('../config.example.json') : await import('../config.json');
         this.login(token);
     }
 }
