@@ -21,7 +21,8 @@ export class Bot extends Client<true> {
             this.commands.set(command.name, command);
         }
 
-        const { token } = process.argv.includes('-workflow') ? require('../config.example.json') : require('../config.json');
+        const { token } = process.argv.includes('-workflow') ? process.env.BOT_TOKEN : require('../config.json');
+        if (process.argv.includes('-workflow')) process.exit();
         this.login(token);
     }
 }
