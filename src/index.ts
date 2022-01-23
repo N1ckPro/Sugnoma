@@ -1,3 +1,4 @@
+import process from 'process';
 import { Bot } from './Bot';
 
 const client = new Bot({ intents: ['GUILDS', 'GUILD_MESSAGES'], failIfNotExists: false, allowedMentions: { repliedUser: false } }, '*');
@@ -18,4 +19,6 @@ client.on('messageCreate', msg => {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}...`);
+
+    process.exit();
 });
