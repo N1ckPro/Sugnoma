@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint src",
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts -start",
     "test": "npm run lint"
   },
   "author": "N1ckPro",

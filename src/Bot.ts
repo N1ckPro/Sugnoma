@@ -1,4 +1,5 @@
 import { readdirSync } from 'fs';
+import process from 'process';
 import { Client, ClientOptions, Collection } from 'discord.js';
 import { CommandClass, CommandInterface } from './typings';
 
@@ -19,5 +20,8 @@ export class Bot extends Client<true> {
             const command: CommandInterface = new commandFile.default();
             this.commands.set(command.name, command);
         }
+
+        const { token } = process.argv.includes('-start') ? await import('../config.json') : await import('../config.example.json');
+        this.login(token);
     }
 }
