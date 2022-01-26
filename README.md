@@ -6,4 +6,4 @@ Discord bot made in TypeScript
 - [Manjot1151](https://github.com/Manjot1151)
 
 # Contributing
-If you'd like to submit a PR, please read [the contribution guide](https://github.com/N1ckPro/Sugnoma/blob/main/.github/CONTRIBUTING.md).
+If you'd like to submit a PR, please read [the contribution guide](.github/CONTRIBUTING.md).
