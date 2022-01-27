@@ -1,5 +1,5 @@
 import { Canvacord } from 'canvacord';
-import { Message } from 'discord.js';
+import { Message, MessageAttachment } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -22,7 +22,7 @@ export default class TriggeredCommand extends Command implements CommandInterfac
             if (parsedUser) user = parsedUser;
         }
         const triggered = await Canvacord.trigger(user.displayAvatarURL({ format: 'png', dynamic: false }));
-        const gif = { attachment: triggered, name: 'triggered.gif', description: `triggered ${user.tag}` };
-        msg.reply({ files: [gif] });
+        const attachment = new MessageAttachment(triggered, 'triggered.gif');
+        msg.reply({ files: [attachment] });
     }
 }
