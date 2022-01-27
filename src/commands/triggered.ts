@@ -17,8 +17,8 @@ export default class TriggeredCommand extends Command implements CommandInterfac
 
     async execute(client: Bot, msg: Message, args: string[]) {
         let user = msg.author;
-        if (args.length >= 1) {
-            const parsedUser = msg.guild?.members.cache.get(args[0].replaceAll(/[<@!>]/g, ''))?.user;
+        if (args.length >= 1 && msg.guild) {
+            const parsedUser = (await msg.guild.members.fetch()).get(args[0].replaceAll(/[<@!>]/g, ''))?.user;
             if (parsedUser) user = parsedUser;
         }
         const triggered = await Canvacord.trigger(user.displayAvatarURL({ format: 'png', dynamic: false }));
