@@ -19,7 +19,7 @@ export default class TriggeredCommand extends Command implements CommandInterfac
         let user = msg.author;
         if (args.length >= 1) {
             const parsedUser = msg.guild?.members.cache.get(args[0].replaceAll(/[<@!>]/g, ''))?.user;
-            if (parsedUser != undefined) user = parsedUser;
+            if (!parsedUser) user = parsedUser;
         }
         const triggered = await Canvacord.trigger(user.displayAvatarURL({ format: 'png', dynamic: false }));
         const gif = { attachment: triggered, name: 'triggered.gif', description: `triggered ${user.tag}` };
