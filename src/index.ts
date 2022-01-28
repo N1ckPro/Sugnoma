@@ -3,7 +3,7 @@ import { Bot } from './Bot';
 const client = new Bot({
     allowedMentions: { repliedUser: false },
     failIfNotExists: false,
-    intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MESSAGES'],
+    intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES'],
     partials: ['CHANNEL']
 }, '*');
 

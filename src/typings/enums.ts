@@ -1,3 +1,3 @@
 export enum CommandType {
-    Help, Misc
+    Help, Image, Misc
 }
