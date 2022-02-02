@@ -37,7 +37,7 @@ export default class HelpCommand extends Command implements CommandInterface {
 
         const embed = new MessageEmbed({
             title: 'Help Menu',
-            description: `Prefix: \`${client.prefix}\`\nUse \`${client.prefix}help <command>\` for command-specific help`,
+            description: `Use \`/help <command>\` for command-specific help`,
             timestamp: Date.now()
         });
 

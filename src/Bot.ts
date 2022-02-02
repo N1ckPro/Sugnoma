@@ -5,7 +5,6 @@ import { CommandClass, CommandInterface } from './typings';
 
 export class Bot extends Client<true> {
     public commands: Collection<string, CommandInterface>;
-    public prefix: string;
 
     constructor(options: ClientOptions) {
         super(options);
