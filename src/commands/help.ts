@@ -22,7 +22,7 @@ export default class HelpCommand extends Command implements CommandInterface {
     execute(client: Bot, interaction: CommandInteraction) {
         const commands = client.commands;
 
-        const commandName = interaction.options.getString('name'); // you will use "name" later
+        const commandName = interaction.options.getString('name');
 
         if (commandName) {
             const command = commands.get(commandName);
