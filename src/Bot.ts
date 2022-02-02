@@ -5,12 +5,10 @@ import { CommandClass, CommandInterface } from './typings';
 
 export class Bot extends Client<true> {
     public commands: Collection<string, CommandInterface>;
-    public prefix: string;
 
-    constructor(options: ClientOptions, prefix: string) {
+    constructor(options: ClientOptions) {
         super(options);
         this.commands = new Collection();
-        this.prefix = prefix;
     }
 
     async setup() {

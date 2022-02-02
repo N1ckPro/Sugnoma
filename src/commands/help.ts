@@ -1,4 +1,4 @@
-import { Message, MessageEmbed } from 'discord.js';
+import { CommandInteraction, MessageEmbed } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -7,6 +7,11 @@ import { CommandType } from '../typings/enums';
 export default class HelpCommand extends Command implements CommandInterface {
     constructor() {
         super({
+            args: [{
+                description: 'Command name',
+                name: 'name',
+                type: 'STRING'
+            }],
             name: 'help',
             help: 'stop it get some help',
             usage: 'help (command)',
@@ -14,21 +19,25 @@ export default class HelpCommand extends Command implements CommandInterface {
         });
     }
 
-    execute(client: Bot, msg: Message, args: string[]) {
+    execute(client: Bot, interaction: CommandInteraction) {
         const commands = client.commands;
-        if (args.length != 0) {
-            const command = commands.find(cmd => cmd.name == args[0]);
+
+        const commandName = interaction.options.getString('name');
+
+        if (commandName) {
+            const command = commands.get(commandName);
             if (!command) {
-                msg.reply(`Command \`${args[0]}\` does not exist!`);
+                interaction.reply(`Command \`${commandName}\` does not exist!`);
                 return;
             }
-            msg.reply(`**${command.name}**\nHelp: ${command.help}\nUsage: ${command.usage}\nType: ${CommandType[command.type]}`);
+
+            interaction.reply(`**${command.name}**\nHelp: ${command.help}\nUsage: ${command.usage}\nType: ${CommandType[command.type]}`);
             return;
         }
 
         const embed = new MessageEmbed({
             title: 'Help Menu',
-            description: `Prefix: \`${client.prefix}\`\nUse \`${client.prefix}help <command>\` for command-specific help`,
+            description: `Use \`/help <command>\` for command-specific help`,
             timestamp: Date.now()
         });
 
@@ -39,6 +48,6 @@ export default class HelpCommand extends Command implements CommandInterface {
             );
         }
 
-        msg.reply({ embeds: [embed] });
+        interaction.reply({ embeds: [embed] });
     }
 }

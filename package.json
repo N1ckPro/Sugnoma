@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint src",
+    "register": "ts-node ./src/index.ts -register",
     "start": "ts-node ./src/index.ts",
     "test": "npm run lint",
     "workflow": "ts-node ./src/index.ts -workflow"
