@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -7,6 +7,12 @@ import { CommandType } from '../typings/enums';
 export default class SayCommand extends Command implements CommandInterface {
     constructor() {
         super({
+            args: [{
+                description: 'Message to say.',
+                name: 'message',
+                required: true,
+                type: 'STRING'
+            }],
             name: 'say',
             help: 'make the bot say your message',
             usage: 'say <message>',
@@ -14,11 +20,7 @@ export default class SayCommand extends Command implements CommandInterface {
         });
     }
 
-    execute(client: Bot, msg: Message, args: string[]) {
-        try {
-            msg.delete();
-        } catch {}
-
-        msg.channel.send(args.join(' '));
+    execute(client: Bot, interaction: CommandInteraction) {
+        interaction.reply(interaction.options.getString('message', true));
     }
 }

@@ -67,7 +67,6 @@ module.exports = {
         'no-useless-concat': 'error',
         'no-useless-constructor': 'error',
         'no-useless-escape': 'error',
-        'no-useless-return': 'error',
         'no-var': 'error',
         'no-void': 'error',
         'no-warning-comments': 'warn',

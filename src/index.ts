@@ -1,3 +1,5 @@
+import process from 'process';
+import { ApplicationCommandData } from 'discord.js';
 import { Bot } from './Bot';
 
 const client = new Bot({
@@ -5,23 +7,26 @@ const client = new Bot({
     failIfNotExists: false,
     intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES'],
     partials: ['CHANNEL']
-}, '*');
+});
 
 client.setup();
 
-client.on('messageCreate', msg => {
-    if (!msg.content.startsWith(client.prefix)) return;
+client.on('interactionCreate', interaction => {
+    if (!interaction.isCommand()) return;
 
-    const args = msg.content.split(' ');
-    const commandName = args[0].substring(client.prefix.length);
-    args.shift();
-
-    const command = client.commands.find(cmd => cmd.name == commandName);
-    if (!command) return;
-
-    command.execute(client, msg, args);
+    const command = client.commands.find(cmd => cmd.name == interaction.commandName);
+    command?.execute(client, interaction);
 });
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}...`);
+
+    if (!process.argv.includes('-register')) return;
+
+    const slashCommandsData: ApplicationCommandData[] = client.commands.map(command => ({
+        name: command.name,
+        description: command.help,
+        options: command.args
+    }));
+    client.guilds.cache.get('713087245229359126')?.commands.set(slashCommandsData);
 });
