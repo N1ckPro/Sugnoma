@@ -8,7 +8,7 @@ export default class PingCommand extends Command implements CommandInterface {
     constructor() {
         super({
             name: 'sussy',
-            help: 'sends a sussy gif',
+            help: 'Sends a sussy gif.',
             usage: 'sussy',
             type: CommandType.Misc
         });
