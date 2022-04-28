@@ -4,7 +4,7 @@ import { Command } from '../Command';
 import { CommandInterface } from '../typings';
 import { CommandType } from '../typings/enums';
 
-export default class PingCommand extends Command implements CommandInterface {
+export default class SussyCommand extends Command implements CommandInterface {
     constructor() {
         super({
             name: 'sussy',
