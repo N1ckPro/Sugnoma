@@ -1,4 +1,4 @@
-import { CommandInteraction } from 'discord.js';
+import { ApplicationCommandOptionType, ChatInputCommandInteraction } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -11,7 +11,7 @@ export default class SayCommand extends Command implements CommandInterface {
                 description: 'Message to say.',
                 name: 'message',
                 required: true,
-                type: 'STRING'
+                type: ApplicationCommandOptionType.String
             }],
             name: 'say',
             help: 'make the bot say your message',
@@ -20,7 +20,7 @@ export default class SayCommand extends Command implements CommandInterface {
         });
     }
 
-    execute(client: Bot, interaction: CommandInteraction) {
+    execute(client: Bot, interaction: ChatInputCommandInteraction) {
         interaction.reply(interaction.options.getString('message', true));
     }
 }

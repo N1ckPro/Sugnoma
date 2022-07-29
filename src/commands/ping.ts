@@ -1,4 +1,4 @@
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -14,7 +14,7 @@ export default class PingCommand extends Command implements CommandInterface {
         });
     }
 
-    execute(client: Bot, interaction: CommandInteraction) {
+    execute(client: Bot, interaction: ChatInputCommandInteraction) {
         interaction.reply(`Ping: ${Date.now() - interaction.createdTimestamp}`);
     }
 }

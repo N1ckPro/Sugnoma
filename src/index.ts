@@ -1,18 +1,18 @@
 import process from 'process';
-import { ApplicationCommandData } from 'discord.js';
+import { ApplicationCommandData, GatewayIntentBits, Partials } from 'discord.js';
 import { Bot } from './Bot';
 
 const client = new Bot({
     allowedMentions: { repliedUser: false },
     failIfNotExists: false,
-    intents: ['DIRECT_MESSAGES', 'GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES'],
-    partials: ['CHANNEL']
+    intents: [GatewayIntentBits.DirectMessages, GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages],
+    partials: [Partials.Channel]
 });
 
 client.setup();
 
 client.on('interactionCreate', interaction => {
-    if (!interaction.isCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
 
     const command = client.commands.find(cmd => cmd.name == interaction.commandName);
     command?.execute(client, interaction);

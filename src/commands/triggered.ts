@@ -1,5 +1,5 @@
 import { Canvacord } from 'canvacord';
-import { CommandInteraction, MessageAttachment } from 'discord.js';
+import { ApplicationCommandOptionType, AttachmentBuilder, ChatInputCommandInteraction } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -11,7 +11,7 @@ export default class TriggeredCommand extends Command implements CommandInterfac
             args: [{
                 description: 'User to trigger.',
                 name: 'user',
-                type: 'USER'
+                type: ApplicationCommandOptionType.User
             }],
             name: 'triggered',
             help: 'apply triggered overlay to a profile picture',
@@ -20,10 +20,10 @@ export default class TriggeredCommand extends Command implements CommandInterfac
         });
     }
 
-    async execute(client: Bot, interaction: CommandInteraction) {
+    async execute(client: Bot, interaction: ChatInputCommandInteraction) {
         const user = interaction.options.getUser('user') ?? interaction.user;
-        const triggered = await Canvacord.trigger(user.displayAvatarURL({ format: 'png', dynamic: false }));
-        const attachment = new MessageAttachment(triggered, 'triggered.gif');
+        const triggered = await Canvacord.trigger(user.displayAvatarURL({ extension: 'png' }));
+        const attachment = new AttachmentBuilder(triggered, { name: 'triggered.gif' });
         interaction.reply({ files: [attachment] });
     }
 }
