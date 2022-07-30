@@ -12,6 +12,7 @@ jobs:
   label_sync:
     name: Label Sync
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'N1ckPro'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
