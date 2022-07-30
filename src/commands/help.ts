@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed } from 'discord.js';
+import { ApplicationCommandOptionType, ChatInputCommandInteraction, EmbedBuilder } from 'discord.js';
 import { Bot } from '../Bot';
 import { Command } from '../Command';
 import { CommandInterface } from '../typings';
@@ -10,7 +10,7 @@ export default class HelpCommand extends Command implements CommandInterface {
             args: [{
                 description: 'Command name',
                 name: 'name',
-                type: 'STRING'
+                type: ApplicationCommandOptionType.String
             }],
             name: 'help',
             help: 'stop it get some help',
@@ -19,7 +19,7 @@ export default class HelpCommand extends Command implements CommandInterface {
         });
     }
 
-    execute(client: Bot, interaction: CommandInteraction) {
+    execute(client: Bot, interaction: ChatInputCommandInteraction) {
         const commands = client.commands;
 
         const commandName = interaction.options.getString('name');
@@ -35,17 +35,17 @@ export default class HelpCommand extends Command implements CommandInterface {
             return;
         }
 
-        const embed = new MessageEmbed({
+        const embed = new EmbedBuilder({
             title: 'Help Menu',
             description: `Use \`/help <command>\` for command-specific help`,
             timestamp: Date.now()
         });
 
         for (const type in Object.keys(CommandType).filter(value => typeof CommandType[value] == 'string')) {
-            embed.addField(
-                CommandType[type],
-                commands.filter(cmd => cmd.type == Number(type)).map(cmd => cmd.name).join(', ')
-            );
+            embed.addFields({
+                name: CommandType[type],
+                value: commands.filter(cmd => cmd.type == Number(type)).map(cmd => cmd.name).join(', ')
+            });
         }
 
         interaction.reply({ embeds: [embed] });

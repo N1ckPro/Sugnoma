@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionData, CommandInteraction } from 'discord.js';
+import { ApplicationCommandOptionData, ChatInputCommandInteraction } from 'discord.js';
 import { CommandType } from './enums';
 import { Bot } from '../Bot';
 
@@ -7,7 +7,7 @@ export interface CommandClass extends CommandInterface {
 }
 
 export interface CommandInterface extends CommandOptions {
-    execute(client: Bot, interaction: CommandInteraction): void
+    execute(client: Bot, interaction: ChatInputCommandInteraction): void
 }
 
 export interface CommandOptions {
