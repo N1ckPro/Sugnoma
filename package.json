@@ -8,8 +8,7 @@
     "lint": "eslint src",
     "register": "ts-node ./src/index.ts -register",
     "start": "ts-node ./src/index.ts",
-    "test": "yarn lint",
-    "workflow": "ts-node ./src/index.ts -workflow"
+    "test": "yarn lint"
   },
   "author": "Sugnoma",
   "contributors": [
