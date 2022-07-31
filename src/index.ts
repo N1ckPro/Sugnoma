@@ -28,5 +28,5 @@ client.on('ready', () => {
         description: command.help,
         options: command.args
     }));
-    client.guilds.cache.get('713087245229359126')?.commands.set(slashCommandsData);
+    client.application.commands.set(slashCommandsData);
 });

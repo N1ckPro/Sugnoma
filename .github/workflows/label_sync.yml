@@ -1,0 +1,23 @@
+name: Label Sync
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/labels.yml'
+jobs:
+  label_sync:
+    name: Label Sync
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'N1ckPro'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Label sync
+        uses: crazy-max/ghaction-github-labeler@v3
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}

@@ -4,21 +4,25 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.16.0, 18.x]
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Install Node v16
-        uses: actions/setup-node@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.13.1
-          cache: npm
+          cache: yarn
+          cache-dependency-path: yarn.lock
         
       - name: Install Dependencies
-        run: npm install
+        run: yarn --immutable
 
       - name: Run Lint
-        run: npm run lint
+        run: yarn lint
 
       - name: Run TypeScript Compiler
-        run: npm run workflow
+        run: yarn build
