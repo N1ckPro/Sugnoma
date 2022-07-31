@@ -1,6 +1,6 @@
 - name: 'bug'
   color: 'd73a4a'
-  description: 'Something isn\'t working'
+  description: "Something isn't working"
 - name: 'bugfix'
   color: 'd73a4a'
   description: 'Pull requests that fix some issues'
@@ -28,7 +28,7 @@
   color: '91a1f5'
 - name: 's: invalid'
   color: '91a1f5'
-- name: 's: won\'t fix'
+- name: "s: won't fix"
   color: '91a1f5'
 - name: 'slash commands'
   color: '99dc3e'
