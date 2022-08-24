@@ -3,3 +3,5 @@ reviewers:
   - N1ckPro
   - Manjot1151
 numberOfReviewers: 0
+filterLabels:
+  - dependencies
