@@ -4,4 +4,5 @@ reviewers:
   - Manjot1151
 numberOfReviewers: 0
 filterLabels:
-  - dependencies
+  exclude:
+    - dependencies
