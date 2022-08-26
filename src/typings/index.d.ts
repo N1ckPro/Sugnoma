@@ -2,10 +2,6 @@ import { ApplicationCommandOptionData, ChatInputCommandInteraction } from 'disco
 import { CommandType } from './enums';
 import { Bot } from '../Bot';
 
-export interface CommandClass extends CommandInterface {
-    new ()
-}
-
 export interface CommandInterface extends CommandOptions {
     execute(client: Bot, interaction: ChatInputCommandInteraction): void
 }
@@ -17,3 +13,6 @@ export interface CommandOptions {
     usage: string
     type: CommandType
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Constructable<T> = new (...args: any[]) => T;
