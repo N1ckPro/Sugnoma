@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionData, ChatInputCommandInteraction } from 'discord.js';
-import { Bot } from './Bot';
+import { Bot } from './Bot.js';
 
 export enum CommandType {
     Help, Image, Misc

@@ -1,6 +1,7 @@
 import process from 'process';
 import { ApplicationCommandData, GatewayIntentBits, Partials } from 'discord.js';
-import { Bot } from './Bot';
+import { Bot } from './Bot.js';
+import 'dotenv/config';
 
 const client = new Bot({
     allowedMentions: { repliedUser: false },
@@ -30,3 +31,5 @@ client.on('ready', () => {
     }));
     client.application.commands.set(slashCommandsData);
 });
+
+client.login(process.env.TOKEN);

@@ -1,6 +1,6 @@
 import { ApplicationCommandOptionType, ChatInputCommandInteraction, EmbedBuilder } from 'discord.js';
-import { Bot } from '../Bot';
-import { Command, CommandType } from '../Command';
+import { Bot } from '../Bot.js';
+import { Command, CommandType } from '../Command.js';
 
 export default class HelpCommand extends Command {
     constructor() {
@@ -39,7 +39,7 @@ export default class HelpCommand extends Command {
             timestamp: Date.now()
         });
 
-        for (const type in Object.keys(CommandType).filter(value => typeof CommandType[value] == 'string')) {
+        for (const type in Object.keys(CommandType).filter(value => typeof CommandType[value as keyof typeof CommandType] == 'string')) {
             embed.addFields({
                 name: CommandType[type],
                 value: commands.filter(cmd => cmd.type == Number(type)).map(cmd => cmd.name).join(', ')

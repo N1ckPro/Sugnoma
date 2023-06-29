@@ -3,14 +3,16 @@
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "lib": ["ES2021"],
-        "module": "CommonJS", 
-        "moduleResolution": "Node",
+        "lib": ["ES2022"],
+        "module": "ES2022",
+        "moduleResolution": "NodeNext",
         "outDir": "build",
-        "resolveJsonModule": true,
+        "skipLibCheck": true,
         "strict": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "target": "ES2021",
+        "target": "ES2022",
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules"],
+    "ts-node": {
+        "esm": true
+    }
 }

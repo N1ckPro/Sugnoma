@@ -1,7 +1,7 @@
 import { Canvacord } from 'canvacord';
 import { ApplicationCommandOptionType, AttachmentBuilder, ChatInputCommandInteraction } from 'discord.js';
-import { Bot } from '../Bot';
-import { Command, CommandType } from '../Command';
+import { Bot } from '../Bot.js';
+import { Command, CommandType } from '../Command.js';
 
 export default class TriggeredCommand extends Command {
     constructor() {
