@@ -1,10 +1,8 @@
 import { ApplicationCommandOptionType, ChatInputCommandInteraction, EmbedBuilder } from 'discord.js';
 import { Bot } from '../Bot';
-import { Command } from '../Command';
-import { CommandInterface } from '../typings';
-import { CommandType } from '../typings/enums';
+import { Command, CommandType } from '../Command';
 
-export default class HelpCommand extends Command implements CommandInterface {
+export default class HelpCommand extends Command {
     constructor() {
         super({
             args: [{

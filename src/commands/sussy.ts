@@ -1,10 +1,8 @@
 import { ChatInputCommandInteraction } from 'discord.js';
 import { Bot } from '../Bot';
-import { Command } from '../Command';
-import { CommandInterface } from '../typings';
-import { CommandType } from '../typings/enums';
+import { Command, CommandType } from '../Command';
 
-export default class SussyCommand extends Command implements CommandInterface {
+export default class SussyCommand extends Command {
     constructor() {
         super({
             name: 'sussy',
