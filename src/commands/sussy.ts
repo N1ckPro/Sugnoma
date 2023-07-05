@@ -1,6 +1,6 @@
 import { ChatInputCommandInteraction } from 'discord.js';
-import { Bot } from '../Bot';
-import { Command, CommandType } from '../Command';
+import { Bot } from '../Bot.js';
+import { Command, CommandType } from '../Command.js';
 
 export default class SussyCommand extends Command {
     constructor() {

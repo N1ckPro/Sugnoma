@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import { Client, ClientOptions, Collection } from 'discord.js';
-import { Command } from './Command';
+import { Command } from './Command.js';
 
 export type Constructable<T> = new (...args: unknown[]) => T;
 
@@ -19,9 +19,5 @@ export class Bot extends Client<true> {
             const command = new commandFile.default();
             this.commands.set(command.name, command);
         }
-
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const { token } = require('../config.json');
-        this.login(token);
     }
 }
