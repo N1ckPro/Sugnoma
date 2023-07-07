@@ -279,7 +279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/canvas@npm:^0.1.26":
+"@napi-rs/canvas@npm:^0.1.29":
   version: 0.1.41
   resolution: "@napi-rs/canvas@npm:0.1.41"
   dependencies:
@@ -892,11 +892,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvacord@npm:5.4.4":
-  version: 5.4.4
-  resolution: "canvacord@npm:5.4.4"
+"canvacord@npm:5.4.10":
+  version: 5.4.10
+  resolution: "canvacord@npm:5.4.10"
   dependencies:
-    "@napi-rs/canvas": ^0.1.26
+    "@napi-rs/canvas": ^0.1.29
     "@skyra/gifenc": ^1.0.0
     chalk: ^5.0.1
     moment: ^2.29.4
@@ -904,7 +904,7 @@ __metadata:
     node-fetch: 2.6.7
   bin:
     canvacord: bin/canvacord.js
-  checksum: edac6da9dfb972630c9cd994d6e48e44ea70d48af5555af6d381b32b06eede6271b16abffe52c0daa366e5187fa367ad0775d53c6ac19d65b0a5e2032abda942
+  checksum: 8f36928583dd7df1e98b4c9a4f6fb6553317bbaed527305140603fa056ef6389310ef5dd6e53c43d79df35f921a0c91090af772b3b7a5bb50def6e9964fbc225
   languageName: node
   linkType: hard
 
@@ -3151,7 +3151,7 @@ __metadata:
     "@types/node": 16.18.38
     "@typescript-eslint/eslint-plugin": 5.61.0
     "@typescript-eslint/parser": 5.61.0
-    canvacord: 5.4.4
+    canvacord: 5.4.10
     canvas: 2.11.2
     discord.js: 14.11.0
     dotenv: 16.3.1
