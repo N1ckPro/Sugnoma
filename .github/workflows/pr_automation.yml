@@ -1,9 +1,0 @@
-name: 'PR Automation'
-on: [pull_request_target]
-jobs:
-  assign:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Assign Reviewers
-        if: ${{ github.event.action == 'opened' }}
-        uses: N1ckPro/auto-assign-action@master
