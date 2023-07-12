@@ -1,7 +1,0 @@
-addReviewers: true
-reviewers:
-  - N1ckPro
-numberOfReviewers: 0
-filterLabels:
-  exclude:
-    - dependencies
