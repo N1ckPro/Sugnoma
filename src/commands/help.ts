@@ -25,11 +25,11 @@ export default class HelpCommand extends Command {
         if (commandName) {
             const command = commands.get(commandName);
             if (!command) {
-                interaction.reply(`Command \`${commandName}\` does not exist!`);
+                void interaction.reply(`Command \`${commandName}\` does not exist!`);
                 return;
             }
 
-            interaction.reply(`**${command.name}**\nHelp: ${command.help}\nUsage: ${command.usage}\nType: ${CommandType[command.type]}`);
+            void interaction.reply(`**${command.name}**\nHelp: ${command.help}\nUsage: ${command.usage}\nType: ${CommandType[command.type]}`);
             return;
         }
 
@@ -39,13 +39,13 @@ export default class HelpCommand extends Command {
             timestamp: Date.now()
         });
 
-        for (const type in Object.keys(CommandType).filter(value => typeof CommandType[value as keyof typeof CommandType] == 'string')) {
+        Object.keys(CommandType).filter(value => typeof CommandType[value as keyof typeof CommandType] == 'number').forEach(type => {
             embed.addFields({
-                name: CommandType[type],
-                value: commands.filter(cmd => cmd.type == Number(type)).map(cmd => cmd.name).join(', ')
+                name: type,
+                value: commands.filter(cmd => cmd.type == CommandType[type as keyof typeof CommandType]).map(cmd => cmd.name).join(', ')
             });
-        }
+        });
 
-        interaction.reply({ embeds: [embed] });
+        void interaction.reply({ embeds: [embed] });
     }
 }

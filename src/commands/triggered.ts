@@ -22,6 +22,6 @@ export default class TriggeredCommand extends Command {
         const user = interaction.options.getUser('user') ?? interaction.user;
         const triggered = await Canvacord.trigger(user.displayAvatarURL({ extension: 'png' }));
         const attachment = new AttachmentBuilder(triggered, { name: 'triggered.gif' });
-        interaction.reply({ files: [attachment] });
+        void interaction.reply({ files: [attachment] });
     }
 }

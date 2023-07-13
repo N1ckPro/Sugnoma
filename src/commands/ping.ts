@@ -13,6 +13,6 @@ export default class PingCommand extends Command {
     }
 
     execute(client: Bot, interaction: ChatInputCommandInteraction) {
-        interaction.reply(`Ping: ${Date.now() - interaction.createdTimestamp}`);
+        void interaction.reply(`Ping: ${Date.now() - interaction.createdTimestamp}`);
     }
 }

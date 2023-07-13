@@ -13,6 +13,6 @@ export default class SussyCommand extends Command {
     }
 
     execute(client: Bot, interaction: ChatInputCommandInteraction) {
-        interaction.reply(`https://tenor.com/view/the-rock-rock-gif-21708339`);
+        void interaction.reply(`https://tenor.com/view/the-rock-rock-gif-21708339`);
     }
 }

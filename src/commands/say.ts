@@ -19,6 +19,6 @@ export default class SayCommand extends Command {
     }
 
     execute(client: Bot, interaction: ChatInputCommandInteraction) {
-        interaction.reply(interaction.options.getString('message', true));
+        void interaction.reply(interaction.options.getString('message', true));
     }
 }
