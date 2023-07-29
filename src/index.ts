@@ -10,7 +10,7 @@ const client = new Bot({
     partials: [Partials.Channel]
 });
 
-client.setup();
+await client.setup();
 
 client.on('interactionCreate', interaction => {
     if (!interaction.isChatInputCommand()) return;
@@ -29,7 +29,8 @@ client.on('ready', () => {
         description: command.help,
         options: command.args
     }));
-    client.application.commands.set(slashCommandsData);
+
+    void client.application.commands.set(slashCommandsData);
 });
 
-client.login(process.env.TOKEN);
+void client.login(process.env.TOKEN);
