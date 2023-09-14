@@ -1,18 +1,18 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "lib": ["ES2022"],
-        "module": "ES2022",
-        "moduleResolution": "NodeNext",
-        "outDir": "build",
-        "skipLibCheck": true,
-        "strict": true,
-        "target": "ES2022",
-    },
-    "exclude": ["build", "node_modules"],
-    "ts-node": {
-        "esm": true
-    }
+	"compileOnSave": true,
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"lib": ["ESNext"],
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"outDir": "build",
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
+	},
+	"exclude": ["build", "node_modules"],
+	"ts-node": {
+		"esm": true
+	}
 }

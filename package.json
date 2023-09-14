@@ -1,39 +1,39 @@
 {
-  "name": "sugnoma",
-  "version": "1.0.0",
-  "description": "Sugnoma Discord Bot.",
-  "main": "src/index.ts",
-  "packageManager": "yarn@3.6.3",
-  "type": "module",
-  "scripts": {
-    "build": "tsc --build",
-    "lint": "eslint src",
-    "register": "ts-node ./src/index.ts -register",
-    "start": "ts-node ./src/index.ts",
-    "test": "yarn lint"
-  },
-  "author": "Sugnoma",
-  "contributors": [
-    "Manjot1151",
-    "n1ck_pro"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "canvacord": "5.4.10",
-    "canvas": "2.11.2",
-    "discord.js": "14.13.0",
-    "dotenv": "16.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "16.18.39",
-    "@typescript-eslint/eslint-plugin": "6.2.0",
-    "@typescript-eslint/parser": "6.2.0",
-    "eslint": "8.46.0",
-    "eslint-plugin-import": "2.28.0",
-    "ts-node": "10.9.1",
-    "typescript": "5.1.6"
-  },
-  "engines": {
-    "node": ">=16.11.0"
-  }
+	"name": "sugnoma",
+	"version": "1.0.0",
+	"description": "Sugnoma Discord Bot.",
+	"main": "src/index.ts",
+	"packageManager": "yarn@3.6.3",
+	"type": "module",
+	"scripts": {
+		"build": "tsc --build",
+		"lint": "eslint src",
+		"register": "ts-node ./src/index.ts -register",
+		"start": "ts-node ./src/index.ts",
+		"test": "yarn lint"
+	},
+	"author": "Sugnoma",
+	"contributors": [
+		"Manjot1151",
+		"n1ck_pro"
+	],
+	"license": "MIT",
+	"dependencies": {
+		"canvacord": "5.4.10",
+		"canvas": "2.11.2",
+		"discord.js": "14.13.0",
+		"dotenv": "16.3.1"
+	},
+	"devDependencies": {
+		"@types/node": "16.18.39",
+		"@typescript-eslint/eslint-plugin": "6.2.0",
+		"@typescript-eslint/parser": "6.2.0",
+		"eslint": "8.46.0",
+		"eslint-plugin-import": "2.28.0",
+		"ts-node": "10.9.1",
+		"typescript": "5.1.6"
+	},
+	"engines": {
+		"node": ">=16.11.0"
+	}
 }
