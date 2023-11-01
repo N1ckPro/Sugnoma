@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Sugnoma Discord Bot.",
 	"main": "src/index.ts",
-	"packageManager": "yarn@3.6.3",
+	"packageManager": "yarn@4.0.1",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
@@ -25,15 +25,15 @@
 		"dotenv": "16.3.1"
 	},
 	"devDependencies": {
-		"@types/node": "16.18.55",
-		"@typescript-eslint/eslint-plugin": "6.7.3",
-		"@typescript-eslint/parser": "6.7.3",
-		"eslint": "8.50.0",
-		"eslint-plugin-import": "2.28.1",
+		"@types/node": "16.18.60",
+		"@typescript-eslint/eslint-plugin": "6.9.1",
+		"@typescript-eslint/parser": "6.9.1",
+		"eslint": "8.52.0",
+		"eslint-plugin-import": "2.29.0",
 		"ts-node": "10.9.1",
 		"typescript": "5.2.2"
 	},
 	"engines": {
-		"node": ">=16.11.0"
+		"node": ">=16.18.2"
 	}
 }
