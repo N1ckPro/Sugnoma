@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Sugnoma Discord Bot.",
 	"main": "src/index.ts",
-	"packageManager": "yarn@3.6.3",
+	"packageManager": "yarn@3.7.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
