@@ -1,28 +1,31 @@
 name: Test
 on: [push, pull_request]
 jobs:
-  test:
-    name: Tests
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
+    test:
+        name: Tests
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [16.x, 18.x, 20.x]
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: yarn
-          cache-dependency-path: yarn.lock
-        
-      - name: Install Dependencies
-        run: yarn --immutable
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  cache: yarn
+                  cache-dependency-path: yarn.lock
 
-      - name: Run Lint
-        run: yarn lint
+            - name: Enable Corepack
+              run: corepack enable
 
-      - name: Run TypeScript Compiler
-        run: yarn build
+            - name: Install Dependencies
+              run: yarn --immutable
+
+            - name: Run Lint
+              run: yarn lint
+
+            - name: Run TypeScript Compiler
+              run: yarn build
