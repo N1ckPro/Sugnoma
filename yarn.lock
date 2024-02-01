@@ -477,10 +477,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.18.95":
-  version: 16.18.95
-  resolution: "@types/node@npm:16.18.95"
-  checksum: 10/5a4394ec2512f5a562f667b8fcb49d81ff7ba3f0be2ab91ebe0095c3e6b73d8472246770b07df2245b527b6b53fa167aae2e8ec9b3f5d35835de47f20bf1b208
+"@types/node@npm:18.19.30":
+  version: 18.19.30
+  resolution: "@types/node@npm:18.19.30"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/321236c6eb8d39bfc72553adf9756581ee319aefd13914a6e04e02189931020645dd976fb9ec952a184993f555cea24c4f8389951428790a3d831e6aac3feb9b
   languageName: node
   linkType: hard
 
@@ -3320,7 +3322,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sugnoma@workspace:."
   dependencies:
-    "@types/node": "npm:16.18.95"
+    "@types/node": "npm:18.19.30"
     "@typescript-eslint/eslint-plugin": "npm:7.5.0"
     "@typescript-eslint/parser": "npm:7.5.0"
     canvacord: "npm:5.4.10"
