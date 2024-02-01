@@ -1,4 +1,4 @@
-import { Canvacord } from 'canvacord';
+import { canvacord } from 'canvacord';
 import { ApplicationCommandOptionType, AttachmentBuilder, ChatInputCommandInteraction } from 'discord.js';
 import { Bot } from '../Bot.js';
 import { Command, CommandType } from '../Command.js';
@@ -20,7 +20,7 @@ export default class TriggeredCommand extends Command {
 
     async execute(client: Bot, interaction: ChatInputCommandInteraction) {
         const user = interaction.options.getUser('user') ?? interaction.user;
-        const triggered = await Canvacord.trigger(user.displayAvatarURL({ extension: 'png' }));
+        const triggered = await canvacord.triggered(user.displayAvatarURL({ extension: 'png' }));
         const attachment = new AttachmentBuilder(triggered, { name: 'triggered.gif' });
         void interaction.reply({ files: [attachment] });
     }
