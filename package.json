@@ -19,7 +19,7 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"canvacord": "5.4.10",
+		"canvacord": "6.0.2",
 		"canvas": "2.11.2",
 		"discord.js": "14.14.1",
 		"dotenv": "16.4.5"
